@@ -178,7 +178,7 @@ export default function ProductDetail() {
           <div>
             <button onClick={handleAddToCart} disabled={!selectedVariant} className="w-full bg-charcoal text-white py-3 text-sm disabled:opacity-40">Ajouter au panier</button>
             {justAdded && (
-              <div className="mt-3 bg-green-50 text-green-700 text-sm rounded-lg p-3 flex items-center justify-between">
+              <div className="mt-3 bg-green-50 text-green-700 text-sm rounded-lg p-3 flex items-center justify-between animate-fade-in-up">
                 <span className="flex items-center gap-2"><FiCheck size={16} /> Ajouté au panier</span>
                 <Link to="/panier" className="underline font-medium">Voir le panier</Link>
               </div>

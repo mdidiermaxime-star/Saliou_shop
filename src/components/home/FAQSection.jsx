@@ -11,7 +11,7 @@ export default function FAQSection() {
   if (faqs.length === 0) return null;
 
   return (
-    <div className="px-6 pb-14">
+    <div className="px-6 py-14">
       <p className="text-xs font-semibold tracking-[0.15em] uppercase text-terracotta-600 mb-3">Questions fréquentes</p>
       <h3 className="font-display font-extrabold uppercase text-2xl md:text-3xl tracking-tight mb-6">On répond à vos questions</h3>
       <div className="max-w-2xl border-t border-gray-200">

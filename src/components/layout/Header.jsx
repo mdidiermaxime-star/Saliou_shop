@@ -92,7 +92,7 @@ export default function Header() {
             <button aria-label="Panier" onClick={() => navigate('/panier')} className="relative hover:text-terracotta-400 transition-colors">
               <FiShoppingBag size={19} />
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-terracotta-400 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center leading-none">
+                <span key={itemCount} className="absolute -top-2 -right-2 bg-terracotta-400 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center leading-none animate-pop-in">
                   {itemCount}
                 </span>
               )}

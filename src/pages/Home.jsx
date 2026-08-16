@@ -37,7 +37,7 @@ export default function Home() {
           animee : la transition entre bannieres est un fondu doux au lieu
           d'un changement brutal. */}
       {banners.length > 0 ? (
-        <div className="relative w-full h-[30vh] min-h-[240px] sm:h-[36vh] md:h-[42vh] md:min-h-[300px] max-h-[440px] overflow-hidden text-white">
+        <div className="relative w-full h-[26vh] min-h-[200px] sm:h-[32vh] sm:min-h-[260px] md:h-[42vh] md:min-h-[300px] max-h-[440px] overflow-hidden text-white">
           {banners.map((banner, i) => (
             <div key={banner.id ?? i}
               className={`absolute inset-0 flex items-end md:items-center transition-opacity duration-1000 ease-in-out ${i === slideIndex ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -51,15 +51,15 @@ export default function Home() {
               <div className="relative max-w-7xl mx-auto w-full px-6 md:px-12 pb-6 sm:pb-8 md:pb-0">
                 {i === slideIndex && (
                   <div key={slideIndex} className="animate-fade-in-up">
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-2 md:mb-3 opacity-90">Nouvelle collection</p>
-                    <h1 className="font-display font-extrabold uppercase text-2xl sm:text-4xl md:text-5xl tracking-tight mb-2 sm:mb-4 leading-[0.95] max-w-2xl">
+                    <p className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase mb-1 sm:mb-2 md:mb-3 opacity-90">Nouvelle collection</p>
+                    <h1 className="font-display font-extrabold uppercase text-xl sm:text-3xl md:text-5xl tracking-tight mb-1.5 sm:mb-3 md:mb-4 leading-[0.95] max-w-2xl">
                       {banner.title}
                     </h1>
                     {banner.subtitle && (
-                      <p className="text-sm md:text-base mb-4 sm:mb-6 max-w-md opacity-95">{banner.subtitle}</p>
+                      <p className="text-xs sm:text-sm md:text-base mb-3 sm:mb-5 md:mb-6 max-w-md opacity-95 hidden sm:block">{banner.subtitle}</p>
                     )}
                     {banner.ctaText && (
-                      <Link to={banner.ctaLink || '/'} className="inline-block bg-white text-charcoal px-6 py-2.5 sm:py-3 text-sm font-medium tracking-wide hover:bg-terracotta-50 active:scale-95 transition-all">
+                      <Link to={banner.ctaLink || '/'} className="inline-block bg-white text-charcoal px-4 sm:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium tracking-wide hover:bg-terracotta-50 active:scale-95 transition-all">
                         {banner.ctaText}
                       </Link>
                     )}

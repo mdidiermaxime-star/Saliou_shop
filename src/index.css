@@ -58,6 +58,14 @@ input, select, textarea {
 .animate-fade-in { animation: fade-in 0.5s ease both; }
 .animate-pop-in { animation: pop-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
+/* Defilement continu de la barre promo sur mobile (liste dupliquee en amont
+   dans le composant pour boucler sans a-coup) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 16s linear infinite; }
+
 /* Apparition douce des sections au defilement : la classe .reveal demarre
    invisible/decalee, .reveal-visible (ajoutee via IntersectionObserver)
    la fait apparaitre. */

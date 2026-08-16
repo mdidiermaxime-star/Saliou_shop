@@ -11,8 +11,19 @@ export default function PromoBar() {
   }, []);
 
   return (
-    <div className="bg-charcoal text-terracotta-100 text-xs py-2 px-5 flex items-center justify-center gap-7 flex-wrap">
-      {items.map((item, i) => <span key={i}>{item}</span>)}
+    <div className="bg-charcoal text-terracotta-100 text-xs py-2 overflow-hidden">
+      {/* Mobile : defilement continu sur une seule ligne, meme taille de
+          texte que sur desktop (pas de retrecissement). La liste est
+          dupliquee pour boucler sans coupure visible. */}
+      <div className="md:hidden flex whitespace-nowrap animate-marquee">
+        {[...items, ...items].map((item, i) => (
+          <span key={i} className="mx-5">{item}</span>
+        ))}
+      </div>
+      {/* Desktop : centre, statique, comme avant */}
+      <div className="hidden md:flex items-center justify-center gap-7 px-5">
+        {items.map((item, i) => <span key={i}>{item}</span>)}
+      </div>
     </div>
   );
 }
